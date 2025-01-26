@@ -1,6 +1,7 @@
 import {Component, EventEmitter, inject, Input, input, Output} from '@angular/core';
 import {MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
+import {MatTooltip} from '@angular/material/tooltip';
 import {Player} from '../../models/player';
 import {PlayersStore} from '../../stores/players.store';
 
@@ -9,7 +10,8 @@ import {PlayersStore} from '../../stores/players.store';
   standalone: true,
   imports: [
     MatIconButton,
-    MatIcon
+    MatIcon,
+    MatTooltip
   ],
   templateUrl: './player-actions.component.html',
   styleUrl: './player-actions.component.css'

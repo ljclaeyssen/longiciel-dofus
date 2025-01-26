@@ -22,7 +22,10 @@
 
 <app-players-list [players]="players$ | async"></app-players-list>
 
-<button mat-button (click)="reset()"> reset</button>
+<button mat-button (click)="reset()"
+        matTooltip="Supprime tout ton historique de façon irréversible"
+        matTooltipPosition="above"
+> reset</button>
 </div>
 </mat-drawer-container>
 

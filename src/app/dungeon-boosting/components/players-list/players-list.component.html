@@ -37,7 +37,9 @@
       </app-player-actions>
     </td>
     <td mat-footer-cell *matFooterCellDef>
-      <button mat-button (click)="sessionDone()">
+      <button mat-button (click)="sessionDone()"
+              matTooltip="Débite le compte de tes clients et actualise ton solde !"
+              matTooltipPosition="below">
         Passage effectué
       </button>
     </td>

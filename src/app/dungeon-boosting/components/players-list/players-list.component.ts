@@ -4,6 +4,7 @@ import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import {MatTooltip} from '@angular/material/tooltip';
 import {Player} from '../../models/player';
 import {PlayersStore} from '../../stores/players.store';
 import {PlayerActionsComponent} from '../player-actions/player-actions.component';
@@ -18,7 +19,8 @@ import {PlayerActionsComponent} from '../player-actions/player-actions.component
     FormsModule,
     MatInputModule,
     MatIconButton,
-    MatIcon
+    MatIcon,
+    MatTooltip
   ],
   templateUrl: './players-list.component.html',
   styleUrl: './players-list.component.css'

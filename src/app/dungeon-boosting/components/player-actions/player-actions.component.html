@@ -1,15 +1,27 @@
-<button mat-icon-button (click)="addSession()">
+<button mat-icon-button (click)="addSession()"
+        matTooltip="Ajoute un passage que t'a payé ton client"
+        matTooltipPosition="before"
+>
   <mat-icon>add</mat-icon>
 </button>
 
-<button mat-icon-button (click)="removeSession()" [disabled]="player.sessions === 0">
+<button mat-icon-button (click)="removeSession()" [disabled]="player.sessions === 0"
+        matTooltip="Misclick ou remboursement ? Retire un passage à ton client"
+        matTooltipPosition="before"
+>
   <mat-icon>remove</mat-icon>
 </button>
 
-<button mat-icon-button (click)="hide()">
+<button mat-icon-button (click)="hide()"
+        matTooltip="Cache le client une fois qu'il est parti"
+        matTooltipPosition="before"
+>
   <mat-icon>visibility</mat-icon>
 </button>
 
-<button mat-icon-button (click)="pause()">
+<button mat-icon-button (click)="pause()"
+        matTooltip="Met le client en pause, il ne sera pas débité"
+        matTooltipPosition="before"
+>
   <mat-icon>{{ player.paused ? 'play_arrow' : 'pause' }}</mat-icon>
 </button>

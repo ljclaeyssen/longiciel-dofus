@@ -5,6 +5,7 @@ import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTooltip} from '@angular/material/tooltip';
 import {map} from 'rxjs';
 import {filterNull} from '../shared/filter-null';
 import {PlayersListComponent} from './components/players-list/players-list.component';
@@ -23,6 +24,7 @@ import {PlayersStore} from './stores/players.store';
     MatIconButton,
     MatIcon,
     SidepanelComponent,
+    MatTooltip,
   ],
   standalone: true,
   templateUrl: './dungeon-boosting.component.html',
