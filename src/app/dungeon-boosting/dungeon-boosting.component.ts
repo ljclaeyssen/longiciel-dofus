@@ -1,11 +1,14 @@
 import {AsyncPipe} from '@angular/common';
 import {Component, inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatButton} from '@angular/material/button';
+import {MatButton, MatIconButton} from '@angular/material/button';
+import {MatIcon} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {map} from 'rxjs';
 import {filterNull} from '../shared/filter-null';
 import {PlayersListComponent} from './components/players-list/players-list.component';
+import {SidepanelComponent} from './components/sidepanel/sidepanel.component';
 import {PlayersStore} from './stores/players.store';
 
 @Component({
@@ -16,6 +19,10 @@ import {PlayersStore} from './stores/players.store';
     PlayersListComponent,
     AsyncPipe,
     MatInputModule,
+    MatSidenavModule,
+    MatIconButton,
+    MatIcon,
+    SidepanelComponent,
   ],
   standalone: true,
   templateUrl: './dungeon-boosting.component.html',

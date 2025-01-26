@@ -1,6 +1,7 @@
 import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatButton} from '@angular/material/button';
+import {MatButton, MatIconButton} from '@angular/material/button';
+import {MatIcon} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {Player} from '../../models/player';
@@ -15,7 +16,9 @@ import {PlayerActionsComponent} from '../player-actions/player-actions.component
     PlayerActionsComponent,
     MatButton,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatIconButton,
+    MatIcon
   ],
   templateUrl: './players-list.component.html',
   styleUrl: './players-list.component.css'

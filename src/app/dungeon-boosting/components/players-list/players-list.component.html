@@ -9,6 +9,11 @@
         <input matInput type="text"
                (keydown.enter)="addPlayer(newPlayerName)"
                [(ngModel)]="newPlayerName" placeholder="Nouveau client">
+        @if (newPlayerName) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="addPlayer(newPlayerName)">
+            <mat-icon>keyboard_return</mat-icon>
+          </button>
+        }
       </mat-form-field>
 
     </td>
