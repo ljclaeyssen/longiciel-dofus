@@ -1,6 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {ComponentStore} from '@ngrx/component-store';
 import {of, tap} from 'rxjs';
+import {filterNull} from '../../shared/filter-null';
 import {Player} from '../models/player';
 import {Profit} from '../models/profit';
 import {PlayersStorageService} from '../services/players-storage.service';
@@ -22,6 +23,10 @@ export class PlayersStore extends ComponentStore<PlayerStoreState> {
   private readonly profitStorageService = inject(ProfitStorageService);
 
   players$ = this.select(state => state.players);
+  profit$ = this.select(state => state.profit)
+    .pipe(
+      filterNull(),
+    );
 
   load$ = this.effect(() =>
     of({}).pipe(
@@ -86,6 +91,11 @@ export class PlayersStore extends ComponentStore<PlayerStoreState> {
       tap(playerList => this.playersStorageService.savePlayers(playerList))
     )
   );
+
+  saveProfitWhenEdited = this.effect(() =>
+  this.profit$.pipe(
+    tap(profit => this.profitStorageService.saveProfits(profit))
+  ))
 
 
   addPlayer(playerName: string): void {

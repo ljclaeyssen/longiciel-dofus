@@ -19,7 +19,7 @@ export class ProfitStorageService {
     };
   }
 
-  saveProfits(players: Player[]): void {
-    localStorage.setItem(this.storageKey, JSON.stringify(players));
+  saveProfits(profit: Profit): void {
+    localStorage.setItem(this.storageKey, JSON.stringify(profit));
   }
 }
