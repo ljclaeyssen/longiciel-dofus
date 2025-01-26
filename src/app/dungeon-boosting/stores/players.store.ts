@@ -5,16 +5,16 @@ import {filterNull} from '../../shared/filter-null';
 import {Player} from '../models/player';
 import {Profit} from '../models/profit';
 import {PlayersStorageService} from '../services/players-storage.service';
-import {ProfitStorageService} from '../services/profit-storage.service';
+import {defaultProfit, ProfitStorageService} from '../services/profit-storage.service';
 
 interface PlayerStoreState {
   players: Player[];
-  profit: Profit | null;
+  profit: Profit;
 }
 
 const defaultState = {
   players: [],
-  profit: null,
+  profit: defaultProfit,
 }
 
 @Injectable()
@@ -106,13 +106,18 @@ export class PlayersStore extends ComponentStore<PlayerStoreState> {
 
   applySession(): void {
     const players = [...this.get().players];
+    let amountDone = 0;
     players.forEach(player => {
       if (player.sessions > 0 && !player.hidden && !player.paused) {
         --player.sessions;
+        amountDone++;
       }
     });
+    const profit = {...this.get().profit};
+    profit.profit = profit.profit + amountDone*profit.price;
     this.patchState({
-      players
+      players,
+      profit
     });
   }
 
