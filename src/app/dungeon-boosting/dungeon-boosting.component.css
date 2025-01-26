@@ -1,8 +1,8 @@
 :host{
-
   display: block;
   width: 70%;
   margin: auto;
+  height: calc(100vh - 64px);
 
   ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled),
   ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled):hover {
