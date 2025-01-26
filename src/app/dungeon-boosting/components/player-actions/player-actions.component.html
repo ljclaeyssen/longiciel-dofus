@@ -1,0 +1,15 @@
+<button mat-icon-button (click)="addSession()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<button mat-icon-button (click)="removeSession()" [disabled]="player.sessions === 0">
+  <mat-icon>remove</mat-icon>
+</button>
+
+<button mat-icon-button (click)="hide()">
+  <mat-icon>visibility</mat-icon>
+</button>
+
+<button mat-icon-button (click)="pause()">
+  <mat-icon>{{ player.paused ? 'play_arrow' : 'pause' }}</mat-icon>
+</button>

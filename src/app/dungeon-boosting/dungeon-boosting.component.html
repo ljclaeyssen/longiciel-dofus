@@ -1,0 +1,16 @@
+<!--<mat-form-field>
+  <mat-label>Prix de la session</mat-label>
+  <input matInput type="number" [(ngModel)]="sessionPrice">
+</mat-form-field>-->
+
+<app-players-list [players]="players$ | async"></app-players-list>
+
+
+
+<!--<div>Total gagné : {{ totalEarned$ | async }}</div>-->
+
+
+
+
+<button mat-button (click)="reset()"> reset </button>
+
