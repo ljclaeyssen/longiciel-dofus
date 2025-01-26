@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /longiciel-dofus/  --output-path docs --configuration production",
-    "deploy": "npx angular-cli-ghpages --dir=docs",
+    "build": "node deploy.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -32,6 +31,7 @@
     "@angular/compiler-cli": "^19.1.0",
     "@types/jasmine": "~5.1.0",
     "angular-cli-ghpages": "^2.0.3",
+    "fs-extra": "^11.3.0",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
