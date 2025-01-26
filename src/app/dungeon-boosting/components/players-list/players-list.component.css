@@ -3,14 +3,7 @@
   justify-content: center;
 
   table {
-    width: 50% !important;
-    min-width: 0 !important;
     background: white;
-  }
-
-  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled),
-  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled):hover {
-    background: none;
   }
 }
 

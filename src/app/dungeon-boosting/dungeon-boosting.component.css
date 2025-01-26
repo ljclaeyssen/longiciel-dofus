@@ -1,1 +1,17 @@
+:host{
 
+  display: block;
+  width: 70%;
+  margin: auto;
+
+  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled),
+  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled):hover {
+    background: none;
+  }
+
+  .profit-container {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+  }
+}

@@ -23,10 +23,7 @@ export class PlayersStore extends ComponentStore<PlayerStoreState> {
   private readonly profitStorageService = inject(ProfitStorageService);
 
   players$ = this.select(state => state.players);
-  profit$ = this.select(state => state.profit)
-    .pipe(
-      filterNull(),
-    );
+  profit$ = this.select(state => state.profit);
 
   load$ = this.effect(() =>
     of({}).pipe(
@@ -121,9 +118,18 @@ export class PlayersStore extends ComponentStore<PlayerStoreState> {
     });
   }
 
+  updatePrice(newPrice: number): void {
+    const profit = {...this.get().profit};
+    profit.price = newPrice;
+    this.patchState({
+      profit
+    })
+  }
+
   reset(): void {
     this.patchState({
-      players: []
+      players: [],
+      profit: defaultProfit,
     })
   }
 }
