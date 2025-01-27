@@ -129,6 +129,10 @@ export class PlayersStore extends ComponentStore<PlayerStoreState> {
     })
   }
 
+  getClientsStateMessage(): string {
+    return this.get().players.reduce((acc, player) => acc + `${player.name}: ${player.sessions} `, '');
+  }
+
   reset(): void {
     this.patchState({
       players: [],

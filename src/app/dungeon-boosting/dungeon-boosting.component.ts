@@ -43,6 +43,10 @@ export class DungeonBoostingComponent {
 
   profit$ = this.playersStore.profit$;
 
+  async sayState(): Promise<void> {
+    await navigator.clipboard.writeText(this.playersStore.getClientsStateMessage());
+  }
+
   reset(): void {
     if (confirm('Attention toutes les données enregistrées seront effacées')) {
       this.playersStore.reset();

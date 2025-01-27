@@ -12,6 +12,9 @@
       <mat-label>Prix de la session</mat-label>
       <input matInput type="number" [ngModel]="profit.price" (ngModelChange)="updatePrice($event)">
     </mat-form-field>
+    <button mat-icon-button (click)="sayState()">
+      <mat-icon>groups</mat-icon>
+    </button>
     <button mat-icon-button (click)="drawer.toggle()" class="info">
       <mat-icon>info</mat-icon>
     </button>
