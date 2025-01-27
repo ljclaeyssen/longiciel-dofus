@@ -102,6 +102,9 @@ export class PlayersStore extends ComponentStore<PlayerStoreState> {
   }
 
   applySession(): void {
+    if(!this.get().profit.price && !confirm(`Attention, tu n'as pas saisie de prix, ton profit sera mal calculé \n es-tu sûr de vouloir valider sans mettre de prix ?`)) {
+      return;
+    }
     const players = [...this.get().players];
     let amountDone = 0;
     players.forEach(player => {
