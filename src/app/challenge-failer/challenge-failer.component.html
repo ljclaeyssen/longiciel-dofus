@@ -1,0 +1,11 @@
+<app-add-challenger></app-add-challenger>
+
+<div class="container">
+  <div class="challengers-container">
+    @for (challenger of challengers(); track challenger) {
+      <app-challenger [challenger]="challenger"></app-challenger>
+    }
+  </div>
+ <app-podium></app-podium>
+</div>
+

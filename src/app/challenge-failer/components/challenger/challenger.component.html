@@ -1,0 +1,16 @@
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{challenger().name}}</mat-card-title>
+    <mat-card-subtitle>{{ challenger().class }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="challenger().class | classImage">
+  <mat-card-content>
+    <p>
+      A raté {{challenger().fails}} {{challenger().fails === 1 ? 'challenge' : 'challenges'}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="store.setScore(challenger().name, 1)">+1</button>
+    <button mat-button (click)="store.setScore(challenger().name, -1)">-1</button>
+  </mat-card-actions>
+</mat-card>

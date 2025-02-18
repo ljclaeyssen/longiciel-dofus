@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Player} from '../models/player';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PlayersStorageService {
 
   private readonly storageKey = 'dungeon-boosting-clients';

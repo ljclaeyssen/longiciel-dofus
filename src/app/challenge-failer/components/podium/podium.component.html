@@ -1,0 +1,3 @@
+@for (player of store.ranking(); track player; let i = $index){
+  <app-podium-element [player]="player" [rank]="i +1"></app-podium-element>
+}

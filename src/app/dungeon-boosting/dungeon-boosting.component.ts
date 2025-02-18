@@ -10,6 +10,8 @@ import {map} from 'rxjs';
 import {filterNull} from '../shared/filter-null';
 import {PlayersListComponent} from './components/players-list/players-list.component';
 import {SidepanelComponent} from './components/sidepanel/sidepanel.component';
+import {PlayersStorageService} from './services/players-storage.service';
+import {ProfitStorageService} from './services/profit-storage.service';
 import {PlayersStore} from './stores/players.store';
 
 @Component({
@@ -30,7 +32,9 @@ import {PlayersStore} from './stores/players.store';
   templateUrl: './dungeon-boosting.component.html',
   styleUrl: './dungeon-boosting.component.css',
   providers: [
-    PlayersStore
+    PlayersStore,
+    ProfitStorageService,
+    PlayersStorageService,
   ]
 })
 export class DungeonBoostingComponent {

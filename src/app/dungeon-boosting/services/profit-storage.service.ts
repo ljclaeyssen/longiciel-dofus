@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import {Player} from '../models/player';
 import {Profit} from '../models/profit';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProfitStorageService {
 
   private readonly storageKey = 'dungeon-boosting-profit';

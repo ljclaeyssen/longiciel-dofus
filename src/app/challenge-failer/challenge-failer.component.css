@@ -1,0 +1,5 @@
+.challengers-container {
+  padding: 1rem 3rem;
+  display: flex;
+  gap: 1rem;
+}

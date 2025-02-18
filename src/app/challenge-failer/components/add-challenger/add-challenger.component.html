@@ -1,0 +1,20 @@
+<mat-form-field appearance="outline">
+  <mat-label>Ajouter un Challenger</mat-label>
+  <input matInput type="text"
+         #challengerName>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>Classe</mat-label>
+  <mat-select #challengerClass>
+    @for (dofusClass of classes; track dofusClass) {
+      <mat-option [value]="dofusClass[0]">
+        {{dofusClass[1]}}
+      </mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+<button mat-raised-button (click)="store.addChallenger(challengerName.value, challengerClass.value); challengerName.value= '';">
+  Ajouter
+</button>
