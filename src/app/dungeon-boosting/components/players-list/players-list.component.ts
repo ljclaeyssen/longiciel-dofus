@@ -54,7 +54,8 @@ export class PlayersListComponent {
   }
 
   getSessionsAmountMessage(): string {
-    const message = this._players.reduce((acc, cur) => acc + `${cur.name} ${cur.sessions} - `, '');
+    const message = this._players.reduce((acc, cur, index) =>
+      acc + `${cur.name} ${cur.sessions}${index === this._players.length -1 ? ' ' : ' - '}`, '');
     this.clipboard.copy(message)
     return message;
   }
