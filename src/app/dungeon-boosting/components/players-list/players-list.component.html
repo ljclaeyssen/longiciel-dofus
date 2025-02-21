@@ -42,6 +42,11 @@
               matTooltipPosition="below">
         Passage effectué
       </button>
+      <button mat-button (click)="getSessionsAmountMessage()"
+              [matTooltip]="getSessionsAmountMessage()"
+              matTooltipPosition="below">
+        <mat-icon>info</mat-icon>
+      </button>
     </td>
   </ng-container>
 

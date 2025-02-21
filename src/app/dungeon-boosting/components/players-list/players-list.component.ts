@@ -1,3 +1,4 @@
+import {Clipboard} from '@angular/cdk/clipboard';
 import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {MatButton, MatIconButton} from '@angular/material/button';
@@ -27,6 +28,7 @@ import {PlayerActionsComponent} from '../player-actions/player-actions.component
 })
 export class PlayersListComponent {
   private readonly playersStore = inject(PlayersStore);
+  private readonly clipboard = inject(Clipboard);
   newPlayerName = '';
 
 
@@ -49,6 +51,12 @@ export class PlayersListComponent {
 
   sessionDone(): void {
     this.playersStore.applySession();
+  }
+
+  getSessionsAmountMessage(): string {
+    const message = this._players.reduce((acc, cur) => acc + `${cur.name} ${cur.sessions} - `, '');
+    this.clipboard.copy(message)
+    return message;
   }
 
   displayedColumns = ['name', 'sessions', 'actions'];
