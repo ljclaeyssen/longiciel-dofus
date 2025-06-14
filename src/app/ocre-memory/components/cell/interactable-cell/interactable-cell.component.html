@@ -1,0 +1,43 @@
+<div class="trigger" [matMenuTriggerFor]="cellMenu" #menuTrigger="matMenuTrigger">
+
+@switch (content()) {
+  @case (CellContent.MALBOIS) {
+    <img src="assets/ocre/malbois.png" class="malbois">
+  }
+  @case (CellContent.MALEPIK) {
+    <img src="assets/ocre/malepik.png" class="malepik">
+  }
+  @case (CellContent.MALTRIO) {
+    <img src="assets/ocre/maltrio.png" class="maltrio">
+  }
+  @case (CellContent.MALZERB) {
+    <img src="assets/ocre/malzerb.png" class="malzerb">
+  }
+  @case (CellContent.UNKNOWN) {
+    <div class="textual-content unknown"> ? </div>
+  }
+  @case (CellContent.CLEARED) {
+    <div class="textual-content cleared"> ✓ </div>
+  }
+}
+</div>
+<mat-menu #cellMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="monster">Monstre</button>
+  <button mat-menu-item [matMenuTriggerFor]="state">Cellule</button>
+</mat-menu>
+
+<mat-menu #monster="matMenu">
+  <button mat-menu-item (click)="setContent(CellContent.MALBOIS)">Malbois</button>
+  <button mat-menu-item (click)="setContent(CellContent.MALEPIK)">Malepik</button>
+  <button mat-menu-item (click)="setContent(CellContent.MALTRIO)">Maltrio</button>
+  <button mat-menu-item (click)="setContent(CellContent.MALZERB)">Malzerb</button>
+  <button mat-menu-item (click)="setContent(CellContent.UNKNOWN)">Inconnu</button>
+</mat-menu>
+
+<mat-menu #state="matMenu">
+  <button mat-menu-item (click)="setContent(CellContent.NOTHING)">Vide</button>
+  <button mat-menu-item (click)="setContent(CellContent.CLEARED)">Nettoyée</button>
+  <button mat-menu-item (click)="setContent(CellContent.UNKNOWN)">Inconnu</button>
+</mat-menu>
+
+

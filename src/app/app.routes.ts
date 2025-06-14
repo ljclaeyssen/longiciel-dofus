@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadComponent: () => import('./challenge-failer/challenge-failer.component').then(m => m.ChallengeFailerComponent)
   },
   {
+    path: 'memory',
+    loadComponent: () => import('./ocre-memory/ocre-memory.component').then(m => m.OcreMemoryComponent)
+  },
+  {
     path: '**',
     redirectTo: 'dungeon-boosting',
   }
